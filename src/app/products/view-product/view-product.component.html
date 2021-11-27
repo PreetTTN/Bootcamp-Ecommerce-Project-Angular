@@ -1,0 +1,93 @@
+
+
+<div class="container mb-5">
+    <div class="card">
+        <div class="container-fluid">
+            <div class="wrapper row">
+                <div class="preview col-md-6">
+                    
+                    <div class="preview-pic tab-content">
+                      <div class="tab-pane active"  id="pic-1"><img src="{{productData.image}}" style="width: 500px; height: 400px;"/></div>
+                      <div class="tab-pane" id="pic-2"><img src="http://placekitten.com/400/252" /></div>
+                      <div class="tab-pane" id="pic-3"><img src="http://placekitten.com/400/252" /></div>
+                    </div>
+                    <ul class="preview-thumbnail nav nav-tabs justify-content-center">
+                      <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
+                      <li><a data-target="#pic-2" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
+                      <li><a data-target="#pic-3" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
+                    </ul>
+                
+                </div>
+                <div class="details col-md-6">
+                    <h3 class="product-title">{{productData.title}}</h3>
+                    <div class="rating">
+                        
+                        <p>{{productData.rating.rate}}</p>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-between">
+                        <h4 class="fw-bold"><span>${{productData.price}}</span></h4>
+                        <select class="form-select w-50 " aria-label="Default select example">
+                            <option selected>Select</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                    </div>
+                    <hr>
+                    <p class="product-description">{{productData.description}}</p>
+
+                    
+                    <div class="action">
+                        <button class="btn btn-primary" type="button" (click) = "onAddtoCart(productData)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+
+        <div class="container">
+            <h2 class="text-center border bg-dark p-2 text-light w-50 mx-auto">Reviews</h2>
+            <div class="row mt-3 mb-3">
+                <div class="col-md-4 d-flex justify-content-evenly mt-4 mb-4">
+                    <div >
+                        <div><img src="http://placekitten.com/400/252" class="rounded-circle img-fluid" alt="" style="width: 60px; height: 60px;"></div>
+                    </div>
+                    <div>
+                        <h6>JOhn Doe</h6>
+                        <p class="text-muted">aug 18, 2021</p>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                    </div>
+                </div>
+                <div class="col-md-8 align-items-center d-flex">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis nobis ut obcaecati? Quia facere eaque necessitatibus. Labore reiciendis laborum provident?
+                </div>
+
+                <div class="col-md-4 d-flex justify-content-evenly mt-4 mb-4">
+                    <div >
+                        <div><img src="http://placekitten.com/400/252" class="rounded-circle img-fluid" alt="" style="width: 60px; height: 60px;"></div>
+                    </div>
+                    <div>
+                        <h6>JOhn Doe</h6>
+                        <p class="text-muted">aug 18, 2021</p>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                    </div>
+                </div>
+                <div class="col-md-8 align-items-center d-flex">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis nobis ut obcaecati? Quia facere eaque necessitatibus. Labore reiciendis laborum provident?
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>

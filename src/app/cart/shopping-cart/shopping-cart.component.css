@@ -1,0 +1,15 @@
+.dec-btn {
+    outline: none;
+    border: none;
+    background: red;
+    color: white;
+    border-radius: 50%;
+}
+
+.inc-btn {
+    outline: none;
+    border: none;
+    background: green;
+    color: white;
+    border-radius: 50%;
+}

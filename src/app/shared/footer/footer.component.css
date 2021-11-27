@@ -1,0 +1,11 @@
+.br-1px-gray {
+    border: 1px solid gray;
+    
+}
+
+div div a{
+    margin-right: 15px;
+    margin-left: 15px;
+    text-decoration: none;
+    color: black;
+}

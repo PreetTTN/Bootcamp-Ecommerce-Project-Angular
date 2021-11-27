@@ -1,0 +1,89 @@
+<div class="container-fluid bg-light">
+  <div
+    class="
+      d-flex
+      justify-content-center
+      fw-bold
+      fst-italic
+      font-monospace
+      pt-5
+      pb-4
+    "
+  >
+    Anyone, Anywhere, Anytime
+  </div>
+  <div class="container pb-5">
+    <div class="row height d-flex justify-content-center align-items-center">
+      <div
+        class="col-md-4 d-flex justify-content-center justify-content-evenly"
+      >
+        <div class="search">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search"
+            (keyup)="onSearch($event)"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Product List -->
+<section class="pt-5 bg-dark">
+  <div class="text-center">
+    <h1 class="display-4 text-light">Product Listing</h1>
+    <hr class="w-25 mx-auto bg-light" />
+    <p class="display-9 text-light">
+      Shop from anywhere, for anyone, at anytime
+    </p>
+  </div>
+  <div class="container product_img pb-3">
+    <div class="row my-5">
+      <div
+        class="col-md-4 col-10 col-xxl-4 mx-auto"
+        *ngFor="let p of allProductData"
+      >
+        <div class="card mb-3" style="max-width: 540px">
+          <div class="row" style="padding: 10px;">
+            <div class="col-md-4 con d-flex justify-content-center">
+              <img
+                src="{{ p.image }}"
+                class="img-fluid rounded-start"
+                alt="services Images"
+              />
+              <div class="middle">
+                <button
+                  type="submit"
+                  class="btn btn-primary hover_btn"
+                  (click)="onAddtoCart(p)"
+                >
+                  Add To
+                </button>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <a
+                  routerLink="/products/view-product/{{ p.id }}"
+                  class="card-title text-decoration-none fw-bold"
+                  >{{ p.title | truncateTitle }}</a
+                >
+                <p class="card-text">
+                  {{ p.description | truncateDescription }}
+                </p>
+
+                <p class="mx-1">{{ p.rating.rate }}</p>
+
+                <p class="card-text">
+                  <small class="text-muted">Price: $ {{ p.price }}</small>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

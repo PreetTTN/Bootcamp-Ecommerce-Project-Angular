@@ -1,0 +1,126 @@
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mt-3 mb-5">
+        <span class="fw-bold fs-5">Shipping Details</span>
+        <hr>
+        <form class="form-inline" [formGroup] = "shoppingDetails" ngSubmit = "onSubmit()">
+          <div class="row">
+            <div class="col-lg-6 mb-3">
+              <input type="text" placeholder="FIRST NAME" class="form-control" formControlName = "firstName">
+              <!-- <span class="help-block" *ngIf = "shoppingDetailsd && shoppingDetails.gettouched">Pleae enter valid data</span> -->
+            </div>
+            <div class="col-lg-6 mb-3">
+              <input type="text" placeholder="LAST NAME" class="form-control" formControlName = "lastName">
+              <!-- <span class="help-block" *ngIf = "!shoppingDetails.get('id && shoppingDetails.getouched">Pleae enter valid data</span> -->
+  
+            </div>
+            <div class="col-lg-12 mb-3">
+              <input type="text" placeholder="ADDRESS" class="form-control" formControlName = "address">
+              <!-- <span class="help-block" *ngIf = "!shoppingDetails.getlid && shoppingDetails.gtouched">Pleae enter valid data</span> -->
+  
+            </div>
+            <div class="col-lg-6 mb-3">
+              <!-- <select class="form-select" aria-label="Default select example" formControlName = "country">
+                <option selected disabled>COUNTRY</option>
+                <option value="" *ngFor = "let countryData of myData">{{countryData.text}}</option>
+              </select> -->
+              <input type="text" placeholder="COUNTRY" class="form-control" formControlName = "country">
+              <!-- <span class="help-block" *ngIf = "!shoppingDetails.getlid && shoppingDetails.gtouched">Pleae enter valid data</span> -->
+  
+            </div>
+            <div class="col-lg-6 mb-3">
+              <input type="text" placeholder="CITY" class="form-control" formControlName = "city">
+              <!-- <span class="help-block" *ngIf = "!shoppingDetails.get('city').valid && shoppingDetails.get('city').touched">Pleae enter valid data</span> -->
+  
+            </div>
+            <div class="col-lg-6 mb-3">
+              <input type="text" placeholder="ZIP/POSTAL CODE" class="form-control" formControlName = "zip">
+              <!-- <span class="help-block" *ngIf = "!shoppingDet).valid && shoppingDetaitouched">Pleae enter valid data</span> -->
+  
+            </div>
+            <div class="col-lg-6 mb-3">
+              <input type="text" placeholder="PHONE NUMBER" class="form-control" formControlName = "phone">
+              <!-- <span class="help-block" *ngIf = "!shoppingDetailsvalid && shoppingDetailstouched">Pleae enter valid data</span> -->
+  
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="form-check border p-3" style="background: #C8C8C8;">
+                <input class="form-check-input radio-inline" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <label class="form-check-label" for="flexRadioDefault2">
+                  <span class="fs-5 fw-bold">Free Shipping</span>
+                  <small class="d-block">Between 2-5 working days</small>
+                </label>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-check border p-3">
+                <input class="form-check-input radio-inline" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                <label class="form-check-label" for="flexRadioDefault2">
+                  <span class="fs-5 fw-bold">Next Day Delivery - $20</span>
+                  <small class="d-block">24 hours from checkout</small>
+                </label>
+              </div>
+            </div>
+          </div>
+          <hr>
+        </form>
+        <div class="d-flex justify-content-evenly col-md-4 mt-5">
+          <button class="btn btn-primary px-4" type="submit" (click) = "onSubmit()" [disabled] = "(!shoppingDetails.valid && shoppingDetails.touched) || !shoppingDetails.touched" routerLink = "/payment-options">Next</button>
+          <button class="btn btn-danger px-3 " routerLink = "/shopping-cart">Back</button>
+        </div>
+      
+      </div>
+  
+      <div class="col-lg-4 mt-3">
+        <div class="row">
+          <span class="fw-bold fs-5">Shipping Details</span>
+          <hr class="mt-3">
+          <div class="d-flex" *ngFor = "let p of product">
+            <div class="col-lg-4 col-sm-4 col-xs-4 mb-4" >
+              <div>
+                <img
+                class="pic"
+                style="width: 100px; height: 70px"
+                src="{{p.image}}"
+                alt=""
+                />
+              </div>
+            </div>
+            <div class="col-lg-8 col-sm-8 col-xs-8" style="margin-left: 30px;">
+              <h4 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 15ch; font-size: 15px;">{{p.title}}</h4>
+              <p>Price $ {{p.price}}</p>
+            </div>
+          </div>
+  
+          
+          <hr>
+          <div class="d-flex flex-column b-bottom mb-4">
+            <div class="d-flex justify-content-between">
+              <small class="text-muted">SUBTOTAL</small>
+              <p>$ {{grandTotal}}</p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <small class="text-muted">SHIPPING</small>
+              <p>Free</p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <small class="text-muted">TAXES</small>
+              <p>$22</p>
+            </div>
+            <hr />
+            <div class="d-flex justify-content-between fw-bold fs-4">
+              TOTAL
+              <p>$132</p>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+  </div>
+
+
+

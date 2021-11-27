@@ -1,0 +1,125 @@
+<div class="container mt-4 p-0 mb-4">
+  <div class="row px-md-4 px-2 pt-4">
+    <div class="col-lg-8">
+      <p class="pb-2 fw-bold">Shopping Cart</p>
+      <div class="card">
+        <div>
+          <div class="table-responsive px-md-4 px-2 pt-3">
+            <table class="table table-borderless" style="width: max-content">
+              <tbody>
+                <tr class="mb-3" *ngFor="let p of product">
+                  <td>
+                    <div class="d-flex align-items-center">
+                      <div>
+                        <img
+                          class="pic"
+                          style="width: 100px; height: 70px"
+                          src="{{ p.image }}"
+                          alt=""
+                        />
+                      </div>
+                      <div
+                        class="ps-3 d-flex flex-column justify-content"
+                        style="width: max-content; line-height: 0.8"
+                      >
+                        <p
+                          class="fw-bold"
+                          style="
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            max-width: 20ch;
+                          "
+                        >
+                          {{ p.title }}
+                        </p>
+                        <small class="d-flex">
+                          <p
+                            class="fw-bold"
+                            style="
+                              white-space: nowrap;
+                              overflow: hidden;
+                              text-overflow: ellipsis;
+                              max-width: 35ch;
+                            "
+                          >
+                            {{ p.description }}
+                          </p>
+                        </small>
+                        <small class="">
+                          <span class="fw-bold"
+                            >$ {{ p.price * p.quantity }}</span
+                          >
+                        </small>
+                      </div>
+                    </div>
+                  </td>
+                  <!-- <td>
+                    <div class="d-flex">
+                      <p class="pe-3"><span class="red">$45.00</span></p>
+                    </div>
+                  </td> -->
+                  <td class="w-25">
+                    <div class="d-flex align-items-center">
+                      <div class="input-group">
+                        <button (click)="onDecrease(p)" class="dec-btn">
+                          -
+                        </button>
+                        <span style="width: 20px; padding: 5px">{{
+                          p.quantity
+                        }}</span>
+                        <button (click)="onIncrease(p)" class="inc-btn">
+                          +
+                        </button>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-evenly col-md-4 mt-5">
+        <button class="btn btn-primary px-4" routerLink="/shopping-details">
+          Next
+        </button>
+        <button class="btn btn-danger px-3" routerLink="/products">
+          Cancel
+        </button>
+      </div>
+    </div>
+
+    <div class="col-lg-4 payment-summary">
+      <p class="fw-bold pt-lg-0 pt-4 pb-2">Summary</p>
+      <div class="card px-md-3 px-2 pt-4">
+        <div class="fw-bold fs-4 mb-4">Enter Coupon Code</div>
+
+        <div class="d-flex justify-content-between b-bottom">
+          <input type="text" class="ps-2" placeholder="COUPON CODE" #coupon/>
+          <div class="btn btn-primary" (click) = "onApplyCoupon(coupon.value)">Apply</div>
+        </div>
+        <hr />
+        <div class="d-flex flex-column b-bottom">
+          <div class="d-flex justify-content-between">
+            <small class="text-muted">SUBTOTAL</small>
+            <p>$ {{ subTotal }}</p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <small class="text-muted">SHIPPING</small>
+            <p>Free</p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <small class="text-muted">TAXES</small>
+            <p>$ {{tax}}</p>
+          </div>
+          <hr />
+          <div class="d-flex justify-content-between fw-bold fs-4">
+            TOTAL
+            <p>$ {{finalTotal}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

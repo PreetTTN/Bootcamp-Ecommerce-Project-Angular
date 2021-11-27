@@ -1,0 +1,10 @@
+.form-check .form-check-input {
+    margin-left: 5px;
+    position: relative;
+    top: 12px;
+}
+
+label {
+    margin-left: 20px;
+}
+
